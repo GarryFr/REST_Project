@@ -1,0 +1,55 @@
+package com.rest.domain;
+
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class Data {
+	
+	@JsonProperty
+	private List<Document> data;
+	
+
+	public void setData(List<Document> data) {
+
+		this.data = data;
+
+	}
+	
+	public List<Document> getData() {
+
+		return data;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((data == null) ? 0 : data.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Data other = (Data) obj;
+		if (data == null) {
+			if (other.data != null)
+				return false;
+		} else if (!data.equals(other.data))
+			return false;
+		return true;
+	}
+
+	
+	 
+
+}
