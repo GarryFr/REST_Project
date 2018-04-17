@@ -19,12 +19,7 @@ public class JsonService {
 		ObjectMapper mapper = new ObjectMapper();
 		try {
 			data = mapper.readValue(jsonData, Data.class);
-		} catch (JsonParseException e) {
-
-			e.printStackTrace();
-		} catch (JsonMappingException e) {
-
-			e.printStackTrace();
+		
 		} catch (IOException e) {
 
 			e.printStackTrace();
@@ -32,4 +27,4 @@ public class JsonService {
 		return data;
 	}
 
-	}
+}
